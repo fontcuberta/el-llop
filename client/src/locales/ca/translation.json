@@ -1,0 +1,93 @@
+{
+  "roles": {
+    "wolf": "Llop",
+    "villager": "Aldea",
+    "seer": "Endeví",
+    "witch": "Bruixa",
+    "hunter": "Caçador",
+    "cupid": "Cupido",
+    "thief": "Lladre",
+    "protector": "Protector",
+    "elder": "Ancià",
+    "idiot": "Idiota",
+    "littleGirl": "Nena"
+  },
+  "night": {
+    "title": "Nit",
+    "dead": "Ets mort",
+    "closeEyes": "Tanca els ulls...",
+    "wolfPrompt": "Tria la teva víctima",
+    "seerPrompt": "Tria un jugador per conèixer el seu rol",
+    "witchPrompt": "Pots usar les teves pocions",
+    "wolfVictim": "Víctima dels llops",
+    "witchHeal": "Salvar víctima",
+    "witchPoisonPrompt": "Enverinar algú",
+    "witchSkip": "Passar",
+    "thiefPrompt": "Tria un rol per quedar-te",
+    "cupidPrompt": "Tria dos amants",
+    "cupidConfirm": "Confirmar amants",
+    "protectorPrompt": "Protegeix un jugador aquesta nit",
+    "littleGirlPeek": "Els llops són:"
+  },
+  "captain": {
+    "title": "Capità",
+    "prompt": "Trieu el capità del poble. El seu vot comptarà doble i trencarà els empats.",
+    "waiting": "Esperant la resta..."
+  },
+  "hunter": {
+    "title": "Caçador",
+    "prompt": "Tria a qui matar amb el teu darrer alè",
+    "waiting": "Esperant el caçador..."
+  },
+  "day": {
+    "title": "Dia",
+    "dead": "Ets mort",
+    "deaths": "Morts aquesta nit",
+    "votePrompt": "Vota per executar",
+    "idiotRevealed": "Has estat revelat com a Idiota. No pots votar.",
+    "idiotSurvived": "Revelat com a Idiota (ha sobreviscut)"
+  },
+  "ended": {
+    "wolvesWin": "Els llops guanyen!",
+    "villagersWin": "Els aldeans guanyen!",
+    "loversWin": "Els amants guanyen!",
+    "roles": "Revelació de rols"
+  },
+  "common": {
+    "appName": "El Lop",
+    "loading": "Carregant...",
+    "readAloud": "Llegir en veu alta",
+    "ttsUnavailable": "TTS no disponible – llegeix la instrucció en veu alta"
+  },
+  "lobby": {
+    "createRoom": "Crear partida",
+    "joinRoom": "Unir-se",
+    "roomCode": "Codi de sala",
+    "yourName": "El teu nom",
+    "players": "Jugadors",
+    "startGame": "Començar partida",
+    "waitingForHost": "Esperant l'amfitrió...",
+    "needMorePlayers": "Calen almenys 4 jugadors",
+    "roleConfig": "Configurar rols",
+    "presets": "Presets",
+    "reset": "Reiniciar",
+    "customRoles": "Afegir rols",
+    "welcome": "Benvingut al poble"
+  },
+  "tts": {
+    "thiefWake": "Lladre, obre els ulls. Tria un de dos rols.",
+    "cupidWake": "Cupido, obre els ulls. Tria dos amants.",
+    "protectorWake": "Protector, obre els ulls. Protegeix algú.",
+    "welcome": "Benvingut al poble",
+    "everyoneCloseEyes": "Tothom, tanca els ulls",
+    "wolvesWake": "Llops, obriu els ulls. Mireu-vos. Trieu la vostra víctima",
+    "wolvesSleep": "Llops, tanceu els ulls",
+    "seerWake": "Endeví, obre els ulls. Tria un jugador per conèixer el seu rol",
+    "seerSleep": "Endeví, tanca els ulls",
+    "witchWake": "Bruixa, obre els ulls. Et informo de la víctima",
+    "witchSleep": "Bruixa, tanca els ulls",
+    "sunRises": "Surt el sol",
+    "wasKilled": "{{name}} ha mort. Era {{role}}",
+    "villageDecides": "El poble ha decidit"
+  }
+}

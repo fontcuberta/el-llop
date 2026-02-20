@@ -1,0 +1,93 @@
+{
+  "roles": {
+    "wolf": "Lobo",
+    "villager": "Aldeano",
+    "seer": "Vidente",
+    "witch": "Bruja",
+    "hunter": "Cazador",
+    "cupid": "Cupido",
+    "thief": "Ladrón",
+    "protector": "Protector",
+    "elder": "Anciano",
+    "idiot": "Idiota",
+    "littleGirl": "Niña"
+  },
+  "night": {
+    "title": "Noche",
+    "dead": "Estás muerto",
+    "closeEyes": "Cierra los ojos...",
+    "wolfPrompt": "Elige a tu víctima",
+    "seerPrompt": "Elige un jugador para conocer su rol",
+    "witchPrompt": "Puedes usar tus pociones",
+    "wolfVictim": "Víctima de los lobos",
+    "witchHeal": "Salvar víctima",
+    "witchPoisonPrompt": "Envenenar a alguien",
+    "witchSkip": "Pasar",
+    "thiefPrompt": "Elige un rol para quedarte",
+    "cupidPrompt": "Elige dos amantes",
+    "cupidConfirm": "Confirmar amantes",
+    "protectorPrompt": "Protege a un jugador esta noche",
+    "littleGirlPeek": "Los lobos son:"
+  },
+  "captain": {
+    "title": "Capitán",
+    "prompt": "Elige al capitán del pueblo. Su voto contará doble y romperá empates.",
+    "waiting": "Esperando al resto..."
+  },
+  "hunter": {
+    "title": "Cazador",
+    "prompt": "Elige a quien matar con tu último aliento",
+    "waiting": "Esperando al cazador..."
+  },
+  "day": {
+    "title": "Día",
+    "dead": "Estás muerto",
+    "deaths": "Muertos esta noche",
+    "votePrompt": "Vota para ejecutar",
+    "idiotRevealed": "Fuiste revelado como Idiota. No puedes votar.",
+    "idiotSurvived": "Revelado como Idiota (sobrevivió)"
+  },
+  "ended": {
+    "wolvesWin": "¡Los lobos ganan!",
+    "villagersWin": "¡Los aldeanos ganan!",
+    "loversWin": "¡Los amantes ganan!",
+    "roles": "Revelación de roles"
+  },
+  "common": {
+    "appName": "El Lop",
+    "loading": "Cargando...",
+    "readAloud": "Leer en voz alta",
+    "ttsUnavailable": "TTS no disponible – lee la instrucción en voz alta"
+  },
+  "lobby": {
+    "createRoom": "Crear partida",
+    "joinRoom": "Unirse",
+    "roomCode": "Código de sala",
+    "yourName": "Tu nombre",
+    "players": "Jugadores",
+    "startGame": "Empezar partida",
+    "waitingForHost": "Esperando al anfitrión...",
+    "needMorePlayers": "Necesitas al menos 4 jugadores",
+    "roleConfig": "Configurar roles",
+    "presets": "Presets",
+    "reset": "Reset",
+    "customRoles": "Añadir roles",
+    "welcome": "Bienvenido al pueblo"
+  },
+  "tts": {
+    "thiefWake": "Ladrón, abre los ojos. Elige uno de dos roles.",
+    "cupidWake": "Cupido, abre los ojos. Elige dos amantes.",
+    "protectorWake": "Protector, abre los ojos. Protege a alguien.",
+    "welcome": "Bienvenido al pueblo",
+    "everyoneCloseEyes": "Todos, cerrad los ojos",
+    "wolvesWake": "Lobos, abrid los ojos. Miros. Elegid vuestra víctima",
+    "wolvesSleep": "Lobos, cerrad los ojos",
+    "seerWake": "Vidente, abre los ojos. Elige un jugador para conocer su rol",
+    "seerSleep": "Vidente, cierra los ojos",
+    "witchWake": "Bruja, abre los ojos. Te informo de la víctima",
+    "witchSleep": "Bruja, cierra los ojos",
+    "sunRises": "Amanece",
+    "wasKilled": "{{name}} ha muerto. Era {{role}}",
+    "villageDecides": "El pueblo decide"
+  }
+}

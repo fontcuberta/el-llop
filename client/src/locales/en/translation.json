@@ -1,0 +1,93 @@
+{
+  "roles": {
+    "wolf": "Wolf",
+    "villager": "Villager",
+    "seer": "Seer",
+    "witch": "Witch",
+    "hunter": "Hunter",
+    "cupid": "Cupid",
+    "thief": "Thief",
+    "protector": "Protector",
+    "elder": "Elder",
+    "idiot": "Idiot",
+    "littleGirl": "Little Girl"
+  },
+  "night": {
+    "title": "Night",
+    "dead": "You are dead",
+    "closeEyes": "Close your eyes...",
+    "wolfPrompt": "Choose your victim",
+    "seerPrompt": "Choose a player to learn their role",
+    "witchPrompt": "You may use your potions",
+    "wolfVictim": "Wolves' victim",
+    "witchHeal": "Save victim",
+    "witchPoisonPrompt": "Poison someone",
+    "witchSkip": "Skip",
+    "thiefPrompt": "Choose a role to become",
+    "cupidPrompt": "Choose two lovers",
+    "cupidConfirm": "Confirm lovers",
+    "protectorPrompt": "Protect a player tonight",
+    "littleGirlPeek": "The wolves are:"
+  },
+  "captain": {
+    "title": "Captain",
+    "prompt": "Elect the village captain. Their vote counts double and breaks ties.",
+    "waiting": "Waiting for others..."
+  },
+  "hunter": {
+    "title": "Hunter",
+    "prompt": "Choose who to kill with your last breath",
+    "waiting": "Waiting for the hunter..."
+  },
+  "day": {
+    "title": "Day",
+    "dead": "You are dead",
+    "deaths": "Deaths tonight",
+    "votePrompt": "Vote to execute",
+    "idiotRevealed": "You were revealed as the Idiot. You cannot vote.",
+    "idiotSurvived": "Revealed as Idiot (survived)"
+  },
+  "ended": {
+    "wolvesWin": "The wolves win!",
+    "villagersWin": "The villagers win!",
+    "loversWin": "The lovers win!",
+    "roles": "Role reveal"
+  },
+  "common": {
+    "appName": "El Lop",
+    "loading": "Loading...",
+    "readAloud": "Read aloud",
+    "ttsUnavailable": "TTS unavailable – please read the instruction aloud"
+  },
+  "lobby": {
+    "createRoom": "Create game",
+    "joinRoom": "Join",
+    "roomCode": "Room code",
+    "yourName": "Your name",
+    "players": "Players",
+    "startGame": "Start game",
+    "waitingForHost": "Waiting for host...",
+    "needMorePlayers": "Need at least 4 players",
+    "roleConfig": "Configure roles",
+    "presets": "Presets",
+    "reset": "Reset",
+    "customRoles": "Add roles",
+    "welcome": "Welcome to the village"
+  },
+  "tts": {
+    "thiefWake": "Thief, open your eyes. Choose one of two roles.",
+    "cupidWake": "Cupid, open your eyes. Choose two lovers.",
+    "protectorWake": "Protector, open your eyes. Protect someone.",
+    "welcome": "Welcome to the village",
+    "everyoneCloseEyes": "Everyone, close your eyes",
+    "wolvesWake": "Wolves, open your eyes. Look at each other. Choose your victim",
+    "wolvesSleep": "Wolves, close your eyes",
+    "seerWake": "Seer, open your eyes. Choose a player to learn their role",
+    "seerSleep": "Seer, close your eyes",
+    "witchWake": "Witch, open your eyes. You are informed of the victim",
+    "witchSleep": "Witch, close your eyes",
+    "sunRises": "The sun rises",
+    "wasKilled": "{{name}} has died. They were a {{role}}",
+    "villageDecides": "The village has decided"
+  }
+}
