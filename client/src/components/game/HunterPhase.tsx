@@ -2,6 +2,8 @@ import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { socket } from "../../socket";
 import { RoleIcon } from "../shared/RoleIcon";
+import { RoleDecoration, VillageScene, WolfPack } from "../illustrations";
+import "../../styles/animations.css";
 import type { GameState } from "shared";
 
 interface HunterPhaseProps {
@@ -27,11 +29,28 @@ export function HunterPhase({ gameState }: HunterPhaseProps) {
         animate={{ opacity: 1, y: 0 }}
         style={{ textAlign: "center", marginBottom: 32 }}
       >
-        <RoleIcon role="hunter" size={56} />
-        <h2 style={{ fontFamily: "var(--font-heading)", color: "var(--accent-blood)", marginTop: 16 }}>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: 12,
+            marginBottom: 8,
+          }}
+        >
+          <WolfPack count={1} size={56} mirror />
+          <div className="animate-glow-breathe">
+            <RoleDecoration role="hunter" size={72} />
+          </div>
+          <WolfPack count={1} size={56} />
+        </div>
+        <h2 style={{ fontFamily: "var(--font-heading)", color: "var(--accent-blood)", marginTop: 12 }}>
           {t("hunter.title")}
         </h2>
         <p style={{ color: "var(--text-muted)" }}>{t("hunter.prompt")}</p>
+        <motion.div style={{ marginTop: 12, opacity: 0.5 }}>
+          <VillageScene variant="night" size={90} />
+        </motion.div>
       </motion.div>
 
       {!isHunter && (

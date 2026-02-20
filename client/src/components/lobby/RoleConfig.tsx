@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { RoleIcon } from "../shared/RoleIcon";
+import { RoleDecoration } from "../illustrations";
 import type { Role } from "shared";
 
 const ALL_ROLES: Role[] = [
@@ -111,7 +112,17 @@ export function RoleConfig({
         <span style={{ opacity: 0.7 }}>{expanded ? "−" : "+"}</span>
       </button>
       {expanded && (
-        <div style={{ padding: "0 16px 16px" }}>
+        <motion.div
+          initial={{ opacity: 0, height: 0 }}
+          animate={{ opacity: 1, height: "auto" }}
+          style={{ padding: "0 16px 16px", overflow: "hidden" }}
+        >
+          <div style={{ display: "flex", justifyContent: "center", gap: 8, marginBottom: 16 }}>
+            <RoleDecoration role="wolf" size={36} />
+            <RoleDecoration role="witch" size={36} />
+            <RoleDecoration role="seer" size={36} />
+            <RoleDecoration role="hunter" size={36} />
+          </div>
           <p style={{ color: "var(--text-muted)", fontSize: 14, marginBottom: 12 }}>
             {t("lobby.presets")}
           </p>
@@ -235,7 +246,7 @@ export function RoleConfig({
               </motion.span>
             ))}
           </div>
-        </div>
+        </motion.div>
       )}
     </div>
   );

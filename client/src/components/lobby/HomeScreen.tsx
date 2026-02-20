@@ -5,6 +5,8 @@ import { motion } from "framer-motion";
 import { socket } from "../../socket";
 import { setLocale } from "../../i18n";
 import type { Locale } from "shared";
+import { WerewolfHero } from "../shared/WerewolfHero";
+import { WerewolfSilhouette } from "../shared/WerewolfSilhouette";
 
 interface HomeScreenProps {
   onCreatedRoom: (roomCode: string) => void;
@@ -72,20 +74,23 @@ export function HomeScreen({ onCreatedRoom, onJoinedRoom }: HomeScreenProps) {
         transition={{ duration: 0.6, ease: "easeOut" }}
         style={{ textAlign: "center", marginBottom: 24 }}
       >
-        <motion.img
-          src="/assets/werewolf-hero.svg"
-          alt="Werewolf"
+        {/* Magical werewolf pack */}
+        <div
           style={{
-            width: 180,
-            height: 144,
-            marginBottom: 16,
-            filter: "drop-shadow(0 0 24px rgba(233, 69, 96, 0.3))",
+            display: "flex",
+            alignItems: "flex-end",
+            justifyContent: "center",
+            gap: 4,
+            marginBottom: 12,
+            minHeight: 162,
           }}
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          whileHover={{ scale: 1.02 }}
-        />
+        >
+          <WerewolfSilhouette size={56} mirror delay={0.1} />
+          <WerewolfSilhouette size={72} mirror delay={0.05} />
+          <WerewolfHero size={200} />
+          <WerewolfSilhouette size={72} delay={0.15} />
+          <WerewolfSilhouette size={56} delay={0.2} />
+        </div>
         <h1
           style={{
             fontFamily: "var(--font-heading)",

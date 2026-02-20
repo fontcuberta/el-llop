@@ -1,6 +1,8 @@
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { socket } from "../../socket";
+import { RoleDecoration, VillageScene, WerewolfSilhouette } from "../illustrations";
+import "../../styles/animations.css";
 import type { GameState } from "shared";
 
 interface CaptainPhaseProps {
@@ -23,21 +25,28 @@ export function CaptainPhase({ gameState }: CaptainPhaseProps) {
         animate={{ opacity: 1, y: 0 }}
         style={{ textAlign: "center", marginBottom: 32 }}
       >
-        <motion.img
-          src="/assets/roles/protector.svg"
-          alt="Captain"
+        <div
           style={{
-            width: 64,
-            height: 64,
-            marginBottom: 16,
-            filter: "drop-shadow(0 0 16px rgba(233, 180, 76, 0.4))",
-            animation: "float 5s ease-in-out infinite",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: 8,
+            marginBottom: 8,
           }}
-        />
+        >
+          <WerewolfSilhouette size={48} mirror />
+          <div className="animate-glow-breathe">
+            <RoleDecoration role="protector" size={72} />
+          </div>
+          <WerewolfSilhouette size={48} />
+        </div>
         <h2 style={{ fontFamily: "var(--font-heading)", color: "var(--accent-gold)" }}>
           {t("captain.title")}
         </h2>
         <p style={{ color: "var(--text-muted)" }}>{t("captain.prompt")}</p>
+        <motion.div style={{ marginTop: 16, opacity: 0.5 }}>
+          <VillageScene variant="night" size={100} />
+        </motion.div>
       </motion.div>
 
       {!hasVoted && (

@@ -1,6 +1,8 @@
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { socket } from "../../socket";
+import { SunRays, VillageScene, WerewolfSilhouette } from "../illustrations";
+import "../../styles/animations.css";
 import type { GameState } from "shared";
 
 interface DayPhaseProps {
@@ -35,26 +37,39 @@ export function DayPhase({ gameState }: DayPhaseProps) {
 
   return (
     <div style={{ padding: 24, minHeight: "100vh", paddingTop: 48 }}>
+      {/* Day header with sun & village */}
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         style={{ textAlign: "center", marginBottom: 32 }}
       >
-        <motion.img
-          src="/assets/sun.svg"
-          alt="Sun"
+        <div
           style={{
-            width: 72,
-            height: 72,
-            marginBottom: 16,
-            filter: "drop-shadow(0 0 16px rgba(233, 180, 76, 0.5))",
-            animation: "glow-pulse 3s ease-in-out infinite",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: 8,
+            marginBottom: 8,
           }}
-        />
+        >
+          <WerewolfSilhouette size={44} mirror />
+          <div className="animate-glow-breathe" style={{ filter: "drop-shadow(0 0 20px rgba(233, 180, 76, 0.5))" }}>
+            <SunRays size={88} />
+          </div>
+          <WerewolfSilhouette size={44} />
+        </div>
         <h2 style={{ fontFamily: "var(--font-heading)", color: "var(--accent-gold)" }}>
           {t("day.title")}
         </h2>
         <p style={{ color: "var(--text-muted)" }}>Day {gameState.nightNumber}</p>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.3 }}
+          style={{ marginTop: 16, opacity: 0.6 }}
+        >
+          <VillageScene variant="day" size={140} />
+        </motion.div>
       </motion.div>
 
       {(gameState.deathsThisCycle?.length > 0 || gameState.lastIdiotRevealed) && (

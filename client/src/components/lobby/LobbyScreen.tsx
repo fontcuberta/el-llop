@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
 import { useSpeech } from "../../hooks/useSpeech";
 import { socket } from "../../socket";
 import { RoleConfig } from "./RoleConfig";
 import { setLocale } from "../../i18n";
+import { VillageScene, WerewolfSilhouette } from "../illustrations";
 import type { GameState, Role } from "shared";
 import type { Locale } from "shared";
 
@@ -74,7 +76,24 @@ export function LobbyScreen({ roomCode, gameState, onBack, onGameState }: LobbyS
 
   return (
     <div style={{ padding: 24, maxWidth: 400, margin: "0 auto", minHeight: "100vh" }}>
-      <div style={{ textAlign: "center", marginBottom: 32 }}>
+      <motion.div
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        style={{ textAlign: "center", marginBottom: 32 }}
+      >
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: 6,
+            marginBottom: 12,
+          }}
+        >
+          <WerewolfSilhouette size={52} mirror />
+          <WerewolfSilhouette size={64} />
+          <WerewolfSilhouette size={52} />
+        </div>
         <h1
           style={{
             fontFamily: "var(--font-heading)",
@@ -88,7 +107,10 @@ export function LobbyScreen({ roomCode, gameState, onBack, onGameState }: LobbyS
         >
           {t("common.appName")}
         </h1>
-      </div>
+        <motion.div style={{ marginTop: 16, opacity: 0.6 }}>
+          <VillageScene variant="night" size={130} />
+        </motion.div>
+      </motion.div>
 
       <div style={{ display: "flex", justifyContent: "center", gap: 8, marginBottom: 16 }}>
         {LOCALES.map(({ value, label }) => (

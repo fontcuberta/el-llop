@@ -1,6 +1,8 @@
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { RoleIcon } from "../shared/RoleIcon";
+import { VillageScene, WolfPack, WerewolfSilhouette } from "../illustrations";
+import "../../styles/animations.css";
 import type { GameState } from "shared";
 
 interface EndedPhaseProps {
@@ -30,6 +32,9 @@ export function EndedPhase({ gameState }: EndedPhaseProps) {
         ? "ended.villagersWin"
         : "ended.loversWin";
 
+  const wolvesWin = gameState.winner === "wolves";
+  const loversWin = gameState.winner === "lovers";
+
   return (
     <div style={{ padding: 24, minHeight: "100vh", paddingTop: 48 }}>
       <motion.div
@@ -37,20 +42,45 @@ export function EndedPhase({ gameState }: EndedPhaseProps) {
         animate={{ opacity: 1, scale: 1 }}
         style={{ textAlign: "center", marginBottom: 32 }}
       >
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: 12,
+            marginBottom: 16,
+          }}
+        >
+          <WerewolfSilhouette size={60} mirror />
+          {wolvesWin ? (
+            <WolfPack count={3} size={110} />
+          ) : loversWin ? (
+            <div style={{ display: "flex", gap: 8 }}>
+              <WerewolfSilhouette size={56} />
+              <WerewolfSilhouette size={56} mirror />
+            </div>
+          ) : (
+            <VillageScene variant="day" size={100} />
+          )}
+          <WerewolfSilhouette size={60} />
+        </div>
         <h1
           style={{
             fontFamily: "var(--font-heading)",
             fontSize: "2rem",
             color:
-              gameState.winner === "wolves"
+              wolvesWin
                 ? "var(--accent-blood)"
-                : gameState.winner === "lovers"
+                : loversWin
                   ? "var(--accent-moon)"
                   : "var(--accent-gold)",
           }}
         >
           {t(winnerKey)}
         </h1>
+        <motion.div style={{ marginTop: 12, opacity: 0.6 }}>
+          <VillageScene variant={wolvesWin ? "night" : "day"} size={120} />
+        </motion.div>
       </motion.div>
 
       <motion.div

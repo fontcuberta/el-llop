@@ -5,6 +5,7 @@ import { AudioManager } from "./audio/AudioManager";
 import { HomeScreen } from "./components/lobby/HomeScreen";
 import { LobbyScreen } from "./components/lobby/LobbyScreen";
 import { GameScreen } from "./components/game/GameScreen";
+import { MagicalSparkles } from "./components/illustrations";
 import { socket } from "./socket";
 import type { GameState } from "shared";
 
@@ -41,7 +42,7 @@ export default function App() {
         overflow: "hidden",
       }}
     >
-      {/* Ambient bubbles / orbs - mystical background */}
+      {/* Ambient bubbles / orbs - mystical village atmosphere */}
       <div
         style={{
           position: "fixed",
@@ -55,39 +56,53 @@ export default function App() {
           className="float"
           style={{
             position: "absolute",
-            width: 140,
-            height: 140,
+            width: 180,
+            height: 180,
             borderRadius: "50%",
-            background: "radial-gradient(circle, var(--glow-moon) 0%, transparent 70%)",
-            top: "15%",
-            left: "8%",
-            animationDuration: "5s",
+            background: "radial-gradient(circle, rgba(139,92,246,0.25) 0%, transparent 70%)",
+            top: "10%",
+            left: "5%",
+            animationDuration: "6s",
           }}
         />
         <div
           className="float"
           style={{
             position: "absolute",
-            width: 90,
-            height: 90,
+            width: 120,
+            height: 120,
             borderRadius: "50%",
-            background: "radial-gradient(circle, var(--glow-wolf) 0%, transparent 70%)",
-            top: "55%",
-            right: "12%",
-            animationDelay: "1.5s",
-            animationDuration: "6s",
+            background: "radial-gradient(circle, var(--glow-moon) 0%, transparent 70%)",
+            top: "15%",
+            left: "8%",
+            animationDuration: "5s",
+            animationDelay: "0.5s",
           }}
         />
         <div
           className="float glow-pulse"
           style={{
             position: "absolute",
-            width: 50,
-            height: 50,
+            width: 100,
+            height: 100,
             borderRadius: "50%",
-            background: "radial-gradient(circle, rgba(201,184,224,0.3) 0%, transparent 70%)",
-            top: "35%",
-            right: "25%",
+            background: "radial-gradient(circle, var(--glow-wolf) 0%, transparent 70%)",
+            top: "50%",
+            right: "8%",
+            animationDelay: "1.5s",
+            animationDuration: "6s",
+          }}
+        />
+        <div
+          className="float sparkle-twinkle"
+          style={{
+            position: "absolute",
+            width: 60,
+            height: 60,
+            borderRadius: "50%",
+            background: "radial-gradient(circle, rgba(34,211,238,0.35) 0%, transparent 70%)",
+            top: "30%",
+            right: "22%",
             animationDelay: "0.5s",
             animationDuration: "4s",
           }}
@@ -96,16 +111,33 @@ export default function App() {
           className="float"
           style={{
             position: "absolute",
-            width: 60,
-            height: 60,
+            width: 80,
+            height: 80,
             borderRadius: "50%",
-            background: "radial-gradient(circle, rgba(233,180,76,0.15) 0%, transparent 70%)",
-            bottom: "25%",
-            left: "20%",
+            background: "radial-gradient(circle, rgba(233,180,76,0.2) 0%, transparent 70%)",
+            bottom: "20%",
+            left: "15%",
             animationDelay: "2s",
             animationDuration: "5.5s",
           }}
         />
+        <div
+          className="float glow-pulse"
+          style={{
+            position: "absolute",
+            width: 70,
+            height: 70,
+            borderRadius: "50%",
+            background: "radial-gradient(circle, rgba(244,114,182,0.2) 0%, transparent 70%)",
+            bottom: "35%",
+            right: "18%",
+            animationDelay: "1s",
+            animationDuration: "4.5s",
+          }}
+        />
+        <div style={{ position: "absolute", inset: 0 }}>
+          <MagicalSparkles count={18} />
+        </div>
       </div>
 
       {/* Mute toggle */}

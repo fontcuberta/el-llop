@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import { useSpeech } from "../../hooks/useSpeech";
 import { socket } from "../../socket";
 import { RoleIcon } from "../shared/RoleIcon";
+import { MoonAndStars, VillageScene, WolfPack } from "../illustrations";
+import "../../styles/animations.css";
 import type { GameState } from "shared";
 
 interface NightPhaseProps {
@@ -88,21 +90,33 @@ export function NightPhase({ gameState }: NightPhaseProps) {
         animate={{ opacity: 1, y: 0 }}
         style={{ textAlign: "center", marginBottom: 32 }}
       >
-        <motion.img
-          src="/assets/moon.svg"
-          alt="Moon"
+        <div
           style={{
-            width: 80,
-            height: 80,
-            marginBottom: 16,
-            filter: "drop-shadow(0 0 20px rgba(201, 184, 224, 0.4))",
-            animation: "float 6s ease-in-out infinite",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: 12,
+            marginBottom: 8,
           }}
-        />
+        >
+          <WolfPack count={2} size={70} mirror />
+          <div className="animate-glow-breathe" style={{ filter: "drop-shadow(0 0 24px rgba(139, 92, 246, 0.5))" }}>
+            <MoonAndStars size={100} />
+          </div>
+          <WolfPack count={2} size={70} />
+        </div>
         <h2 style={{ fontFamily: "var(--font-heading)", color: "var(--accent-moon)" }}>
           {t("night.title")}
         </h2>
         <p style={{ color: "var(--text-muted)" }}>Night {gameState.nightNumber}</p>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.3 }}
+          style={{ marginTop: 12, opacity: 0.5 }}
+        >
+          <VillageScene variant="night" size={120} />
+        </motion.div>
       </motion.div>
 
       {!me?.alive && (
