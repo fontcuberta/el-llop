@@ -57,6 +57,7 @@
     "appName": "El llop",
     "loading": "Carregant...",
     "readAloud": "Llegir en veu alta",
+    "close": "Tancar",
     "ttsUnavailable": "TTS no disponible – llegeix la instrucció en veu alta"
   },
   "lobby": {
@@ -73,6 +74,37 @@
     "reset": "Reiniciar",
     "customRoles": "Afegir rols",
     "welcome": "Benvingut al poble"
+  },
+  "rules": {
+    "title": "Com jugar",
+    "overview": "En un poble apartat, llops amagats cacen de nit. De dia, els aldeans han de trobar-los i executar-los. Cada rol té una habilitat única.",
+    "phases": "Fases del joc",
+    "phase": {
+      "captain": "Trieu un capità. El seu vot compta doble i trenca empats.",
+      "night": "De nit, els rols especials despertin: Llops trien víctima, Endeví coneix un rol, Bruixa pot curar o enverinar, Protector guarda algú.",
+      "day": "A l'alba, el poble vota per executar un sospitós. Elimina tots els llops per guanyar.",
+      "hunter": "Si el Caçador mor, pot triar una víctima amb el seu últim alè."
+    },
+    "roles": "Rols",
+    "role": {
+      "wolf": "Cada nit els llops despertin junts i trien una víctima. Els llops guanyen si igualen o superen els aldeans.",
+      "villager": "Sense poder especial. Usa el teu enginy i vots per trobar els llops.",
+      "seer": "Cada nit, tria un jugador per conèixer el seu rol real.",
+      "witch": "Una cura i un verí. T'informen de la víctima dels llops i pots salvar-la o enverinar.",
+      "hunter": "Si mors, tries a l'instant un jugador per matar.",
+      "cupid": "Només nit u: tria dos amants. Si un mor, l'altre mor. Els amants guanyen si són els dos últims vius.",
+      "thief": "Només nit u: tria una de dues cartes de rol per convertir-te.",
+      "protector": "Cada nit, protegeix un jugador. Els llops no poden matar-lo.",
+      "elder": "Sobreviviu el primer atac de llops. Si és executat, el poble perd poder de vot.",
+      "idiot": "Si et executen, sobrevius però et revelen i mai podràs votar de nou.",
+      "littleGirl": "Pots espiar qui són els llops quan despertin."
+    },
+    "winConditions": "Com guanyar",
+    "win": {
+      "wolves": "Els llops guanyen quan igualen o superen els aldeans.",
+      "villagers": "Els aldeans guanyen quan tots els llops estan morts.",
+      "lovers": "Si els dos últims vius són els amants, guanyen junts."
+    }
   },
   "tts": {
     "thiefWake": "Lladre, obre els ulls. Tria un de dos rols.",

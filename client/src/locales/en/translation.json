@@ -57,6 +57,7 @@
     "appName": "El llop",
     "loading": "Loading...",
     "readAloud": "Read aloud",
+    "close": "Close",
     "ttsUnavailable": "TTS unavailable – please read the instruction aloud"
   },
   "lobby": {
@@ -73,6 +74,37 @@
     "reset": "Reset",
     "customRoles": "Add roles",
     "welcome": "Welcome to the village"
+  },
+  "rules": {
+    "title": "How to Play",
+    "overview": "In a secluded village, hidden werewolves hunt at night. By day, villagers must find and execute them. Each role has a unique ability.",
+    "phases": "Game Phases",
+    "phase": {
+      "captain": "Elect a captain. Their vote counts double and breaks ties.",
+      "night": "At night, special roles wake in order: Wolves choose a victim, Seer learns a role, Witch may heal or poison, Protector guards someone.",
+      "day": "At dawn, the village votes to execute a suspect. Eliminate all wolves to win.",
+      "hunter": "If the Hunter is killed, they may take one victim with their last breath."
+    },
+    "roles": "Roles",
+    "role": {
+      "wolf": "Each night, wolves wake together and choose one victim. Wolves win if they equal or outnumber villagers.",
+      "villager": "No special power. Use your wits and votes to find the wolves.",
+      "seer": "Each night, choose a player to learn their true role.",
+      "witch": "One heal and one poison. You are told the wolves' victim and may save or poison.",
+      "hunter": "If you die, you immediately choose one player to kill.",
+      "cupid": "Night one only: choose two lovers. If one dies, the other dies. Lovers win if last two alive.",
+      "thief": "Night one only: choose one of two role cards to become.",
+      "protector": "Each night, protect a player. Wolves cannot kill them.",
+      "elder": "Survives first wolf attack. If executed, village loses voting power.",
+      "idiot": "If executed, you survive but are revealed and can never vote again.",
+      "littleGirl": "May peek at the wolves when they wake."
+    },
+    "winConditions": "How to Win",
+    "win": {
+      "wolves": "Wolves win when they equal or outnumber villagers.",
+      "villagers": "Villagers win when all wolves are dead.",
+      "lovers": "If the last two alive are lovers, they win together."
+    }
   },
   "tts": {
     "thiefWake": "Thief, open your eyes. Choose one of two roles.",

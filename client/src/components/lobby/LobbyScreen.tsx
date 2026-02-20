@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useSpeech } from "../../hooks/useSpeech";
 import { socket } from "../../socket";
 import { RoleConfig } from "./RoleConfig";
 import { setLocale } from "../../i18n";
 import { VillageScene, WerewolfSilhouette } from "../illustrations";
+import { RulesScreen } from "./RulesScreen";
 import type { GameState, Role } from "shared";
 import type { Locale } from "shared";
 
@@ -28,6 +29,7 @@ export function LobbyScreen({ roomCode, gameState, onBack, onGameState }: LobbyS
   const { t } = useTranslation();
   const { speak } = useSpeech();
   const [roleDeck, setRoleDeck] = useState<Role[]>(DEFAULT_DECK);
+  const [showRules, setShowRules] = useState(false);
   const playerCount = gameState?.players?.length ?? 0;
   const isHost = gameState && gameState.players?.[0]?.socketId === socket.id;
 
@@ -75,6 +77,12 @@ export function LobbyScreen({ roomCode, gameState, onBack, onGameState }: LobbyS
   };
 
   return (
+    <>
+      <AnimatePresence>
+        {showRules && (
+          <RulesScreen onClose={() => setShowRules(false)} />
+        )}
+      </AnimatePresence>
     <div style={{ padding: 24, maxWidth: 400, margin: "0 auto", minHeight: "100vh" }}>
       <motion.div
         initial={{ opacity: 0, y: -10 }}
@@ -112,7 +120,21 @@ export function LobbyScreen({ roomCode, gameState, onBack, onGameState }: LobbyS
         </motion.div>
       </motion.div>
 
-      <div style={{ display: "flex", justifyContent: "center", gap: 8, marginBottom: 16 }}>
+      <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: 8, marginBottom: 16 }}>
+        <button
+          onClick={() => setShowRules(true)}
+          style={{
+            padding: "6px 12px",
+            border: "1px solid var(--accent-gold)",
+            borderRadius: 8,
+            background: "transparent",
+            color: "var(--accent-gold)",
+            cursor: "pointer",
+            fontSize: 13,
+          }}
+        >
+          {t("rules.title")}
+        </button>
         {LOCALES.map(({ value, label }) => (
           <button
             key={value}
@@ -259,5 +281,6 @@ export function LobbyScreen({ roomCode, gameState, onBack, onGameState }: LobbyS
         )}
       </div>
     </div>
+    </>
   );
 }

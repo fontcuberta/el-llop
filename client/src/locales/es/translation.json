@@ -57,6 +57,7 @@
     "appName": "El llop",
     "loading": "Cargando...",
     "readAloud": "Leer en voz alta",
+    "close": "Cerrar",
     "ttsUnavailable": "TTS no disponible – lee la instrucción en voz alta"
   },
   "lobby": {
@@ -73,6 +74,37 @@
     "reset": "Reset",
     "customRoles": "Añadir roles",
     "welcome": "Bienvenido al pueblo"
+  },
+  "rules": {
+    "title": "Cómo jugar",
+    "overview": "En un pueblo aislado, lobos ocultos cazan de noche. De día, los aldeanos deben encontrarlos y ejecutarlos. Cada rol tiene una habilidad única.",
+    "phases": "Fases del juego",
+    "phase": {
+      "captain": "Elige un capitán. Su voto cuenta doble y rompe empates.",
+      "night": "De noche, los roles especiales despiertan: Lobos eligen víctima, Vidente conoce un rol, Bruja puede curar o envenenar, Protector guarda a alguien.",
+      "day": "Al amanecer, el pueblo vota para ejecutar a un sospechoso. Elimina a todos los lobos para ganar.",
+      "hunter": "Si el Cazador muere, puede elegir una víctima con su último aliento."
+    },
+    "roles": "Roles",
+    "role": {
+      "wolf": "Cada noche los lobos despiertan juntos y eligen una víctima. Los lobos ganan si igualan o superan a los aldeanos.",
+      "villager": "Sin poder especial. Usa tu ingenio y votos para encontrar a los lobos.",
+      "seer": "Cada noche, elige un jugador para conocer su rol verdadero.",
+      "witch": "Una cura y un veneno. Te informan de la víctima de los lobos y puedes salvarla o envenenar.",
+      "hunter": "Si mueres, eliges al instante un jugador para matar.",
+      "cupid": "Solo noche uno: elige dos amantes. Si uno muere, el otro muere. Los amantes ganan si son los dos últimos vivos.",
+      "thief": "Solo noche uno: elige una de dos cartas de rol para convertirte.",
+      "protector": "Cada noche, protege a un jugador. Los lobos no pueden matarlo.",
+      "elder": "Sobrevive el primer ataque de lobos. Si es ejecutado, el pueblo pierde poder de voto.",
+      "idiot": "Si te ejecutan, sobrevives pero te revelan y nunca podrás votar de nuevo.",
+      "littleGirl": "Puedes espiar quiénes son los lobos cuando despiertan."
+    },
+    "winConditions": "Cómo ganar",
+    "win": {
+      "wolves": "Los lobos ganan cuando igualan o superan a los aldeanos.",
+      "villagers": "Los aldeanos ganan cuando todos los lobos están muertos.",
+      "lovers": "Si los dos últimos vivos son los amantes, ganan juntos."
+    }
   },
   "tts": {
     "thiefWake": "Ladrón, abre los ojos. Elige uno de dos roles.",

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import { AnimatePresence } from "framer-motion";
 import { RECONNECT_STORAGE_KEY, type ReconnectData } from "shared";
 import { motion } from "framer-motion";
 import { socket } from "../../socket";
@@ -7,6 +8,7 @@ import { setLocale } from "../../i18n";
 import type { Locale } from "shared";
 import { WerewolfHero } from "../shared/WerewolfHero";
 import { WerewolfSilhouette } from "../shared/WerewolfSilhouette";
+import { RulesScreen } from "./RulesScreen";
 
 interface HomeScreenProps {
   onCreatedRoom: (roomCode: string) => void;
@@ -22,6 +24,7 @@ const LOCALES: { value: Locale; label: string }[] = [
 export function HomeScreen({ onCreatedRoom, onJoinedRoom }: HomeScreenProps) {
   const { t } = useTranslation();
   const [mode, setMode] = useState<"choose" | "create" | "join">("choose");
+  const [showRules, setShowRules] = useState(false);
   const [name, setName] = useState("");
   const [roomCode, setRoomCode] = useState("");
   const [error, setError] = useState("");
@@ -67,6 +70,12 @@ export function HomeScreen({ onCreatedRoom, onJoinedRoom }: HomeScreenProps) {
   };
 
   return (
+    <>
+      <AnimatePresence>
+        {showRules && (
+          <RulesScreen onClose={() => setShowRules(false)} />
+        )}
+      </AnimatePresence>
     <div style={{ padding: 24, maxWidth: 400, margin: "0 auto", minHeight: "100vh" }}>
       <motion.div
         initial={{ opacity: 0, y: -20 }}
@@ -114,8 +123,22 @@ export function HomeScreen({ onCreatedRoom, onJoinedRoom }: HomeScreenProps) {
         </motion.p>
       </motion.div>
 
-      {/* Language selector */}
-      <div style={{ display: "flex", justifyContent: "center", gap: 8, marginBottom: 32 }}>
+      {/* How to Play & Language */}
+      <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: 8, marginBottom: 32 }}>
+        <button
+          onClick={() => setShowRules(true)}
+          style={{
+            padding: "8px 16px",
+            border: "1px solid var(--accent-gold)",
+            borderRadius: 8,
+            background: "transparent",
+            color: "var(--accent-gold)",
+            cursor: "pointer",
+            fontSize: 14,
+          }}
+        >
+          {t("rules.title")}
+        </button>
         {LOCALES.map(({ value, label }) => (
           <button
             key={value}
@@ -322,5 +345,6 @@ export function HomeScreen({ onCreatedRoom, onJoinedRoom }: HomeScreenProps) {
         </motion.form>
       )}
     </div>
+    </>
   );
 }
