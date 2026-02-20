@@ -66,7 +66,26 @@ export function HomeScreen({ onCreatedRoom, onJoinedRoom }: HomeScreenProps) {
 
   return (
     <div style={{ padding: 24, maxWidth: 400, margin: "0 auto", minHeight: "100vh" }}>
-      <div style={{ textAlign: "center", marginBottom: 32 }}>
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        style={{ textAlign: "center", marginBottom: 24 }}
+      >
+        <motion.img
+          src="/assets/werewolf-hero.svg"
+          alt="Werewolf"
+          style={{
+            width: 180,
+            height: 144,
+            marginBottom: 16,
+            filter: "drop-shadow(0 0 24px rgba(233, 69, 96, 0.3))",
+          }}
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          whileHover={{ scale: 1.02 }}
+        />
         <h1
           style={{
             fontFamily: "var(--font-heading)",
@@ -80,8 +99,15 @@ export function HomeScreen({ onCreatedRoom, onJoinedRoom }: HomeScreenProps) {
         >
           {t("common.appName")}
         </h1>
-        <p style={{ color: "var(--text-muted)", marginTop: 8 }}>Werewolves</p>
-      </div>
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.4 }}
+          style={{ color: "var(--text-muted)", marginTop: 8 }}
+        >
+          Werewolves
+        </motion.p>
+      </motion.div>
 
       {/* Language selector */}
       <div style={{ display: "flex", justifyContent: "center", gap: 8, marginBottom: 32 }}>
@@ -106,12 +132,17 @@ export function HomeScreen({ onCreatedRoom, onJoinedRoom }: HomeScreenProps) {
 
       {mode === "choose" && (
         <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           style={{ display: "flex", flexDirection: "column", gap: 16 }}
         >
-          <button
+          <motion.button
             onClick={() => setMode("create")}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+            whileHover={{ scale: 1.02, boxShadow: "0 8px 30px rgba(233, 69, 96, 0.2)" }}
+            whileTap={{ scale: 0.98 }}
             style={{
               padding: 20,
               background: "var(--gradient-card)",
@@ -124,9 +155,14 @@ export function HomeScreen({ onCreatedRoom, onJoinedRoom }: HomeScreenProps) {
             }}
           >
             {t("lobby.createRoom")}
-          </button>
-          <button
+          </motion.button>
+          <motion.button
             onClick={() => setMode("join")}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+            whileHover={{ scale: 1.02, boxShadow: "0 8px 30px rgba(233, 180, 76, 0.2)" }}
+            whileTap={{ scale: 0.98 }}
             style={{
               padding: 20,
               background: "var(--gradient-card)",
@@ -139,7 +175,7 @@ export function HomeScreen({ onCreatedRoom, onJoinedRoom }: HomeScreenProps) {
             }}
           >
             {t("lobby.joinRoom")}
-          </button>
+          </motion.button>
         </motion.div>
       )}
 

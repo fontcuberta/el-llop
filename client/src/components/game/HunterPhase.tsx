@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { socket } from "../../socket";
+import { RoleIcon } from "../shared/RoleIcon";
 import type { GameState } from "shared";
 
 interface HunterPhaseProps {
@@ -22,11 +23,12 @@ export function HunterPhase({ gameState }: HunterPhaseProps) {
   return (
     <div style={{ padding: 24, minHeight: "100vh", paddingTop: 48 }}>
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
         style={{ textAlign: "center", marginBottom: 32 }}
       >
-        <h2 style={{ fontFamily: "var(--font-heading)", color: "var(--accent-blood)" }}>
+        <RoleIcon role="hunter" size={56} />
+        <h2 style={{ fontFamily: "var(--font-heading)", color: "var(--accent-blood)", marginTop: 16 }}>
           {t("hunter.title")}
         </h2>
         <p style={{ color: "var(--text-muted)" }}>{t("hunter.prompt")}</p>

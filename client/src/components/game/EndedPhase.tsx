@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
+import { RoleIcon } from "../shared/RoleIcon";
 import type { GameState } from "shared";
 
 interface EndedPhaseProps {
@@ -64,24 +65,30 @@ export function EndedPhase({ gameState }: EndedPhaseProps) {
         }}
       >
         <p style={{ color: "var(--text-muted)", marginBottom: 16 }}>{t("ended.roles")}</p>
-        {gameState.players.map((p) => (
-          <div
+        {gameState.players.map((p, i) => (
+          <motion.div
             key={p.id}
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.3 + i * 0.05 }}
             style={{
               display: "flex",
+              alignItems: "center",
               justifyContent: "space-between",
-              padding: "8px 0",
+              gap: 12,
+              padding: "12px 0",
               borderBottom: "1px solid rgba(255,255,255,0.08)",
             }}
           >
-            <span style={{ color: p.alive ? "var(--text-primary)" : "var(--text-muted)" }}>
+            <span style={{ color: p.alive ? "var(--text-primary)" : "var(--text-muted)", display: "flex", alignItems: "center", gap: 12 }}>
+              <RoleIcon role={p.role} size={36} animate={false} />
               {p.name}
               {!p.alive && " †"}
             </span>
             <span style={{ color: "var(--accent-moon)" }}>
               {t(ROLE_KEYS[p.role] ?? p.role)}
             </span>
-          </div>
+          </motion.div>
         ))}
       </motion.div>
     </div>

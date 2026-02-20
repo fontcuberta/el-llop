@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { useSpeech } from "../../hooks/useSpeech";
 import { socket } from "../../socket";
+import { RoleIcon } from "../shared/RoleIcon";
 import type { GameState } from "shared";
 
 interface NightPhaseProps {
@@ -83,10 +84,21 @@ export function NightPhase({ gameState }: NightPhaseProps) {
   return (
     <div style={{ padding: 24, minHeight: "100vh", paddingTop: 48 }}>
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
         style={{ textAlign: "center", marginBottom: 32 }}
       >
+        <motion.img
+          src="/assets/moon.svg"
+          alt="Moon"
+          style={{
+            width: 80,
+            height: 80,
+            marginBottom: 16,
+            filter: "drop-shadow(0 0 20px rgba(201, 184, 224, 0.4))",
+            animation: "float 6s ease-in-out infinite",
+          }}
+        />
         <h2 style={{ fontFamily: "var(--font-heading)", color: "var(--accent-moon)" }}>
           {t("night.title")}
         </h2>
@@ -166,7 +178,10 @@ export function NightPhase({ gameState }: NightPhaseProps) {
           animate={{ opacity: 1, y: 0 }}
           style={{ maxWidth: 400, margin: "0 auto" }}
         >
-          <p style={{ marginBottom: 16, color: "var(--accent-moon)" }}>{t("night.thiefPrompt")}</p>
+          <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
+            <RoleIcon role="thief" size={48} />
+            <p style={{ margin: 0, color: "var(--accent-moon)" }}>{t("night.thiefPrompt")}</p>
+          </div>
           <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             {gameState.thiefChoices.map((role) => (
               <button
@@ -195,7 +210,10 @@ export function NightPhase({ gameState }: NightPhaseProps) {
           animate={{ opacity: 1, y: 0 }}
           style={{ maxWidth: 400, margin: "0 auto" }}
         >
-          <p style={{ marginBottom: 16, color: "var(--accent-moon)" }}>{t("night.cupidPrompt")}</p>
+          <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
+            <RoleIcon role="cupid" size={48} />
+            <p style={{ margin: 0, color: "var(--accent-moon)" }}>{t("night.cupidPrompt")}</p>
+          </div>
           <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             {allPlayers.map((p) => (
               <button
@@ -241,7 +259,10 @@ export function NightPhase({ gameState }: NightPhaseProps) {
           animate={{ opacity: 1, y: 0 }}
           style={{ maxWidth: 400, margin: "0 auto" }}
         >
-          <p style={{ marginBottom: 16, color: "var(--accent-moon)" }}>{t("night.protectorPrompt")}</p>
+          <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
+            <RoleIcon role="protector" size={48} />
+            <p style={{ margin: 0, color: "var(--accent-moon)" }}>{t("night.protectorPrompt")}</p>
+          </div>
           <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             {allPlayers.map((p) => (
               <button
@@ -271,9 +292,12 @@ export function NightPhase({ gameState }: NightPhaseProps) {
           animate={{ opacity: 1, y: 0 }}
           style={{ maxWidth: 400, margin: "0 auto" }}
         >
-          <p style={{ marginBottom: 16, color: "var(--accent-blood)" }}>
-            {t("night.wolfPrompt")}
-          </p>
+          <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
+            <RoleIcon role="wolf" size={48} />
+            <p style={{ margin: 0, color: "var(--accent-blood)" }}>
+              {t("night.wolfPrompt")}
+            </p>
+          </div>
           <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             {aliveOthers.map((p) => (
               <button
@@ -303,9 +327,12 @@ export function NightPhase({ gameState }: NightPhaseProps) {
           animate={{ opacity: 1, y: 0 }}
           style={{ maxWidth: 400, margin: "0 auto" }}
         >
-          <p style={{ marginBottom: 16, color: "var(--accent-moon)" }}>
-            {t("night.seerPrompt")}
-          </p>
+          <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
+            <RoleIcon role="seer" size={48} />
+            <p style={{ margin: 0, color: "var(--accent-moon)" }}>
+              {t("night.seerPrompt")}
+            </p>
+          </div>
           {gameState.seerReveal ? (
             <p style={{ padding: 24, background: "var(--bg-card)", borderRadius: 12 }}>
               {gameState.seerReveal.name} → {t(`roles.${gameState.seerReveal.role}`)}
@@ -341,9 +368,12 @@ export function NightPhase({ gameState }: NightPhaseProps) {
           animate={{ opacity: 1, y: 0 }}
           style={{ maxWidth: 400, margin: "0 auto" }}
         >
-          <p style={{ marginBottom: 16, color: "var(--accent-moon)" }}>
-            {t("night.witchPrompt")}
-          </p>
+          <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
+            <RoleIcon role="witch" size={48} />
+            <p style={{ margin: 0, color: "var(--accent-moon)" }}>
+              {t("night.witchPrompt")}
+            </p>
+          </div>
           {gameState.wolfVictim && (
             <p style={{ marginBottom: 12, color: "var(--text-muted)" }}>
               {t("night.wolfVictim")}:{" "}

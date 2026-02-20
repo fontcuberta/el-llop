@@ -19,10 +19,21 @@ export function CaptainPhase({ gameState }: CaptainPhaseProps) {
   return (
     <div style={{ padding: 24, minHeight: "100vh", paddingTop: 48 }}>
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
         style={{ textAlign: "center", marginBottom: 32 }}
       >
+        <motion.img
+          src="/assets/roles/protector.svg"
+          alt="Captain"
+          style={{
+            width: 64,
+            height: 64,
+            marginBottom: 16,
+            filter: "drop-shadow(0 0 16px rgba(233, 180, 76, 0.4))",
+            animation: "float 5s ease-in-out infinite",
+          }}
+        />
         <h2 style={{ fontFamily: "var(--font-heading)", color: "var(--accent-gold)" }}>
           {t("captain.title")}
         </h2>

@@ -11,7 +11,12 @@ const io = new Server(httpServer, {
     cors: { origin: "*" },
 });
 registerSocketHandlers(io);
-app.use(express.static(path.join(__dirname, "../public")));
+// Serve built client (client/dist) in production
+const clientDist = path.join(__dirname, "../../client/dist");
+app.use(express.static(clientDist));
+app.get("*", (_req, res) => {
+    res.sendFile(path.join(clientDist, "index.html"));
+});
 const PORT = process.env.PORT || 3010;
 httpServer.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);

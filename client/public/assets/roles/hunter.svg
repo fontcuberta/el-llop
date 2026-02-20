@@ -1,7 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5">
-  <circle cx="32" cy="18" r="8"/>
-  <path d="M24 50 Q32 38 40 50" stroke-linecap="round"/>
-  <path d="M8 20 L56 20" stroke-linecap="round"/>
-  <path d="M32 20 L32 50" stroke-linecap="round"/>
-  <path d="M28 16 L36 16" stroke-linecap="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="hunter-grad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#1f0f3a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#c9b8e0;stop-opacity:0.8" />
+    </linearGradient>
+  </defs>
+  <!-- Hunter - bow and arrow silhouette -->
+  <circle cx="32" cy="20" r="10" fill="url(#hunter-grad)" stroke="currentColor" stroke-width="1"/>
+  <path fill="url(#hunter-grad)" stroke="currentColor" stroke-width="1" d="M20 58 Q32 38 44 58 Z"/>
+  <!-- Bow -->
+  <path fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" d="M8 36 Q32 20 56 36" opacity="0.9"/>
+  <path fill="none" stroke="currentColor" stroke-width="1.5" d="M14 34 L50 34"/>
+  <!-- Arrow tip -->
+  <path fill="currentColor" d="M48 34 L56 32 L56 36 Z"/>
 </svg>

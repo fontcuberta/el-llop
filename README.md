@@ -1,4 +1,4 @@
-# El Lop – Werewolves
+# El llop – Werewolves
 
 A multi-device Werewolves (Loups-Garous) game with text-to-speech narration, i18n (ES/EN/CA), and a dark mystical aesthetic.
 

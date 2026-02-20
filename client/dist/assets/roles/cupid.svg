@@ -1,5 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5">
-  <path d="M32 12 C20 12 16 28 16 36 C16 44 24 50 32 50 C40 50 48 44 48 36 C48 28 44 12 32 12 Z" stroke-linejoin="round"/>
-  <path d="M32 24 L32 38 M26 30 L38 30" stroke-linecap="round"/>
-  <path d="M8 32 L24 32 M40 32 L56 32" stroke-linecap="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="cupid-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e94560;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#c9b8e0;stop-opacity:0.9" />
+    </linearGradient>
+  </defs>
+  <!-- Cupid - heart, bow, angelic -->
+  <circle cx="32" cy="18" r="10" fill="url(#cupid-grad)" stroke="currentColor" stroke-width="1"/>
+  <path fill="url(#cupid-grad)" stroke="currentColor" stroke-width="1" d="M18 56 Q32 38 46 56 Z"/>
+  <!-- Heart -->
+  <path fill="currentColor" d="M32 36 C24 28 16 34 24 42 C28 46 32 50 32 50 C32 50 36 46 40 42 C48 34 40 28 32 36 Z" opacity="0.9"/>
+  <!-- Small wings -->
+  <path fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" d="M14 24 Q8 32 12 40" opacity="0.7"/>
+  <path fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" d="M50 24 Q56 32 52 40" opacity="0.7"/>
 </svg>

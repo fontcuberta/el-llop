@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 160">
+  <defs>
+    <linearGradient id="hero-wolf" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#1a0a2e;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#e94560;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#c9b8e0;stop-opacity:0.5" />
+    </linearGradient>
+    <filter id="hero-glow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <!-- Majestic werewolf silhouette -->
+  <path fill="url(#hero-wolf)" filter="url(#hero-glow)" d="
+    M100 20
+    C70 20 50 50 45 80
+    C40 100 50 120 70 130
+    L100 140
+    L130 130
+    C150 120 160 100 155 80
+    C150 50 130 20 100 20
+    Z
+  " opacity="0.95"/>
+  <!-- Wolf head profile -->
+  <path fill="currentColor" d="M100 40 C75 45 60 65 55 85 C52 95 55 105 65 110 L100 115 L135 110 C145 105 148 95 145 85 C140 65 125 45 100 40 Z" opacity="0.9"/>
+  <!-- Ear -->
+  <path fill="currentColor" d="M80 35 L70 15 L85 30 Z" opacity="0.9"/>
+  <path fill="currentColor" d="M120 35 L130 15 L115 30 Z" opacity="0.9"/>
+  <!-- Eye glow -->
+  <ellipse cx="85" cy="75" rx="6" ry="8" fill="#e94560" opacity="0.8"/>
+  <ellipse cx="115" cy="75" rx="6" ry="8" fill="#e94560" opacity="0.8"/>
+</svg>

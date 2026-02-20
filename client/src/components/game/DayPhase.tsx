@@ -36,10 +36,21 @@ export function DayPhase({ gameState }: DayPhaseProps) {
   return (
     <div style={{ padding: 24, minHeight: "100vh", paddingTop: 48 }}>
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
         style={{ textAlign: "center", marginBottom: 32 }}
       >
+        <motion.img
+          src="/assets/sun.svg"
+          alt="Sun"
+          style={{
+            width: 72,
+            height: 72,
+            marginBottom: 16,
+            filter: "drop-shadow(0 0 16px rgba(233, 180, 76, 0.5))",
+            animation: "glow-pulse 3s ease-in-out infinite",
+          }}
+        />
         <h2 style={{ fontFamily: "var(--font-heading)", color: "var(--accent-gold)" }}>
           {t("day.title")}
         </h2>

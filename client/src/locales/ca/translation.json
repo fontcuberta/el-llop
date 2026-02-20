@@ -54,7 +54,7 @@
     "roles": "Revelació de rols"
   },
   "common": {
-    "appName": "El Lop",
+    "appName": "El llop",
     "loading": "Carregant...",
     "readAloud": "Llegir en veu alta",
     "ttsUnavailable": "TTS no disponible – llegeix la instrucció en veu alta"

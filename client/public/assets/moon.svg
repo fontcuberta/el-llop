@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <defs>
+    <linearGradient id="moon-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e9b44c;stop-opacity:0.4" />
+      <stop offset="50%" style="stop-color:#c9b8e0;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#f0e6ff;stop-opacity:0.3" />
+    </linearGradient>
+    <filter id="moon-glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <circle cx="60" cy="60" r="45" fill="url(#moon-grad)" filter="url(#moon-glow)"/>
+  <circle cx="60" cy="60" r="40" fill="none" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+  <circle cx="50" cy="45" r="8" fill="rgba(0,0,0,0.2)"/>
+  <circle cx="70" cy="55" r="5" fill="rgba(0,0,0,0.15)"/>
+  <circle cx="55" cy="72" r="6" fill="rgba(0,0,0,0.1)"/>
+</svg>

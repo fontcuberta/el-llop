@@ -54,7 +54,7 @@
     "roles": "Role reveal"
   },
   "common": {
-    "appName": "El Lop",
+    "appName": "El llop",
     "loading": "Loading...",
     "readAloud": "Read aloud",
     "ttsUnavailable": "TTS unavailable – please read the instruction aloud"

@@ -1,9 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5">
-  <path d="M32 8 L36 24 L32 20 L28 24 Z" stroke-linejoin="round"/>
-  <ellipse cx="32" cy="28" rx="10" ry="12"/>
-  <path d="M22 40 Q32 52 42 40" stroke-linecap="round"/>
-  <path d="M18 36 L22 32 M46 36 L42 32" stroke-linecap="round"/>
-  <ellipse cx="28" cy="26" rx="2" ry="3"/>
-  <ellipse cx="36" cy="26" rx="2" ry="3"/>
-  <path d="M30 50 L32 58 L34 50" stroke-linecap="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="witch-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2a1545;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#6b4c9a;stop-opacity:0.9" />
+    </linearGradient>
+    <linearGradient id="witch-potion" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#e94560;stop-opacity:0.8" />
+      <stop offset="50%" style="stop-color:#c9b8e0;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#e9b44c;stop-opacity:0.4" />
+    </linearGradient>
+  </defs>
+  <!-- Witch - pointy hat, cauldron -->
+  <path fill="url(#witch-grad)" stroke="currentColor" stroke-width="1" d="M32 4 L48 28 L44 32 L20 32 L16 28 Z"/>
+  <ellipse cx="32" cy="26" rx="12" ry="10" fill="url(#witch-grad)" stroke="currentColor" stroke-width="1"/>
+  <path fill="none" stroke="currentColor" stroke-width="1" d="M14 54 L18 36 Q32 28 46 36 L50 54 Z"/>
+  <!-- Bubbling potion -->
+  <ellipse cx="32" cy="48" rx="14" ry="8" fill="url(#witch-potion)" opacity="0.9"/>
+  <circle cx="26" cy="44" r="2" fill="currentColor" opacity="0.5"/>
+  <circle cx="38" cy="46" r="1.5" fill="currentColor" opacity="0.5"/>
 </svg>

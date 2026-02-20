@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
+import { RoleIcon } from "../shared/RoleIcon";
 import type { Role } from "shared";
 
 const ALL_ROLES: Role[] = [
@@ -172,40 +174,49 @@ export function RoleConfig({
           </p>
           <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
             {ALL_ROLES.map((role) => (
-              <button
+              <motion.button
                 key={role}
                 onClick={() => addRole(role)}
                 disabled={currentDeck.length >= playerCount}
+                whileHover={{ scale: currentDeck.length >= playerCount ? 1 : 1.05 }}
+                whileTap={{ scale: 0.98 }}
                 style={{
                   padding: "6px 12px",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: 6,
                   background: currentDeck.length >= playerCount ? "transparent" : "var(--bg-deep)",
                   border: "1px solid var(--accent-moon)",
-                  borderRadius: 6,
+                  borderRadius: 8,
                   color: "var(--text-primary)",
                   fontSize: 12,
                   cursor: currentDeck.length >= playerCount ? "not-allowed" : "pointer",
                   opacity: currentDeck.length >= playerCount ? 0.5 : 1,
                 }}
               >
+                <RoleIcon role={role} size={24} animate={false} />
                 + {t(`roles.${role}`)}
-              </button>
+              </motion.button>
             ))}
           </div>
-          <div style={{ marginTop: 12 }}>
+          <div style={{ marginTop: 12, display: "flex", flexWrap: "wrap", gap: 8 }}>
             {currentDeck.map((role, i) => (
-              <span
+              <motion.span
                 key={`${role}-${i}`}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
-                  gap: 4,
-                  margin: "2px 4px 2px 0",
-                  padding: "4px 8px",
+                  gap: 6,
+                  padding: "6px 10px",
                   background: "var(--bg-deep)",
-                  borderRadius: 6,
+                  borderRadius: 8,
                   fontSize: 12,
+                  border: "1px solid rgba(201, 184, 224, 0.2)",
                 }}
               >
+                <RoleIcon role={role} size={28} animate={false} />
                 {t(`roles.${role}`)}
                 <button
                   onClick={() => removeRole(i)}
@@ -221,7 +232,7 @@ export function RoleConfig({
                 >
                   ×
                 </button>
-              </span>
+              </motion.span>
             ))}
           </div>
         </div>
